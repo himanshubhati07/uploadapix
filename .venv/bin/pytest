@@ -1,0 +1,8 @@
+#!/home/ryzen/fast_api_generator_backend/outputs/c880a487-d8cf-4cb1-82c9-3bfd459673d3/.venv/bin/python3.11
+# -*- coding: utf-8 -*-
+import re
+import sys
+from _pytest.config import _console_main
+if __name__ == '__main__':
+    sys.argv[0] = re.sub(r'(-script\.pyw|\.exe)?$', '', sys.argv[0])
+    sys.exit(_console_main())
