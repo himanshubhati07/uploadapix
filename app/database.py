@@ -4,9 +4,9 @@ from dotenv import load_dotenv
 from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine, async_sessionmaker
 from sqlalchemy.orm import DeclarativeBase
 
-load_dotenv('.env_c880a487-d8cf-4cb1-82c9-3bfd459673d3', override=True)
+load_dotenv('.env_299761e0-dfc4-4ccc-8fde-ee245d2f5212', override=True)
 
-DEFAULT_DATABASE_URL = "postgresql+asyncpg://myuser:mypassword@localhost:5432/gen_ae1525ed5f"
+DEFAULT_DATABASE_URL = os.getenv("DATABASE_URL", "")
 
 
 def _to_async_url(url: str) -> str:

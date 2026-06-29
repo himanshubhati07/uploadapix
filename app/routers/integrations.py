@@ -90,17 +90,6 @@ async def update_integration(integration_id: str, payload: IntegrationUpdate, db
     return integration
 
 
-@router.delete("/{integration_id}", response_model=MessageResponse)
-async def delete_integration(integration_id: str, db: AsyncSession = Depends(get_db), _=Depends(get_current_user)):
-    result = await db.execute(select(Integration).where(Integration.id == integration_id))
-    integration = result.scalar_one_or_none()
-    if integration is None:
-        raise HTTPException(status_code=404, detail="Integration not found")
-    await db.delete(integration)
-    await db.commit()
-    return MessageResponse(message="Integration deleted")
-
-
 @router.post("/{integration_id}/analyze", response_model=IntegrationAnalysisRead, status_code=status.HTTP_201_CREATED)
 async def analyze_integration(integration_id: str, db: AsyncSession = Depends(get_db), _=Depends(get_current_user)):
     result = await db.execute(select(Integration).where(Integration.id == integration_id))

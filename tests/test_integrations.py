@@ -11,7 +11,7 @@ async def get_token(client):
 
 
 @pytest.mark.asyncio
-async def test_create_list_get_update_delete_integration(client):
+async def test_create_list_get_update_integration(client):
     token = await get_token(client)
     headers = {"Authorization": f"Bearer {token}"}
 
@@ -32,5 +32,3 @@ async def test_create_list_get_update_delete_integration(client):
     )
     assert update_resp.status_code == 200
 
-    delete_resp = await client.delete(f"/api/v1/integrations/{integration_id}", headers=headers)
-    assert delete_resp.status_code == 200

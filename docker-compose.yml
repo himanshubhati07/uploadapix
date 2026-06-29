@@ -15,7 +15,7 @@ services:
     depends_on:
       - db
     environment:
-      DATABASE_URL: postgresql+asyncpg://myuser:mypassword@db:5432/gen_ae1525ed5f
+      DATABASE_URL: postgresql+asyncpg://myuser:mypassword@localhost:5432/gen_51fe5c6eda
       SECRET_KEY: super-secret-key
       ALGORITHM: HS256
       ACCESS_TOKEN_EXPIRE_MINUTES: 30

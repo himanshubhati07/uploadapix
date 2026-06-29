@@ -8,7 +8,7 @@ from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker, Asyn
 from sqlalchemy.engine.url import make_url
 from dotenv import load_dotenv
 
-load_dotenv('.env_c880a487-d8cf-4cb1-82c9-3bfd459673d3', override=True)
+load_dotenv('.env_299761e0-dfc4-4ccc-8fde-ee245d2f5212', override=True)
 
 from app.main import app
 from app.database import Base, get_db
